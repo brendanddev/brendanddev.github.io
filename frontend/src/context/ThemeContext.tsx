@@ -6,38 +6,14 @@
 
 import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
 
-
 // Defines the type for the theme context
 interface ThemeContextType {
    isDarkMode: boolean;
    setIsDarkMode: (value: boolean) => void;
    theme: {
-        // Background colors
+        // Background
         background: string;
-        card: string;
-        cardHover: string;
-
-        // Text
-        text: string;
-        textSecondary: string;
-        heading: string;
-
-        // Accents
-        primary: string;
-        primaryHover: string;
-        secondary: string;
-        secondaryHover: string;
-
-        // Borders
-        border: string;
-        borderHover: string;
-
-        // Other
-        terminal: string;
-        terminalHeader: string;
-        button: string;
-        buttonHover: string;
-        buttonText: string;
+        navbarBackground: string;
    };
 }
 
@@ -58,12 +34,7 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
 
     const theme = {
         background: isDarkMode ? 'bg-gray-900' : 'bg-gray-50',
-        text: isDarkMode ? 'text-white' : 'text-gray-900',
-        primary: isDarkMode ? 'text-[#00ffcc]' : 'text-[#0066cc]',
-        secondary: isDarkMode ? 'text-gray-400' : 'text-gray-600',
-        accent: isDarkMode ? 'bg-[#00ffcc]' : 'bg-[#0066cc]',
-        card: isDarkMode ? 'bg-gray-800' : 'bg-white',
-        border: isDarkMode ? 'border-gray-700' : 'border-gray-200'
+        navbarBackground: isDarkMode ? 'bg-black' : 'bg-white',
     };
 
 

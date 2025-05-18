@@ -12,8 +12,11 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 
+import { useTheme } from "../context/ThemeContext";
+
 const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const { theme } = useTheme();
 
   // Routes
   const links = [
@@ -24,7 +27,7 @@ const NavBar = () => {
     { to: "/me", label: "me" },
   ];
 
-  // Render react router links
+  // Render react router linkstext
   const renderLinks = (closeMenu = false) =>
     links.map(({ to, label }) => (
       <li key={label}>
@@ -41,7 +44,7 @@ const NavBar = () => {
     ));
 
   return (
-    <nav className="w-full bg-black border-b border-gray-700 p-4 font-mono text-[#00ff00] flex items-center justify-between z-40 relative">
+    <nav className={`w-full ${theme.navbarBackground} border-b border-gray-700 p-4 font-mono text-[#00ff00] flex items-center justify-between z-40 relative`}>
       <div className="font-semibold text-xl tracking-tight text-[#00ff00]">
         Brendan Dileo
       </div>
@@ -61,7 +64,7 @@ const NavBar = () => {
      
       {/* Dropdown */}
       <ul
-        className={`absolute top-full left-0 w-full bg-black border-t border-gray-700 flex-col text-lg font-mono transition-all duration-300 ease-in-out overflow-hidden ${
+        className={`absolute top-full left-0 w-full ${theme.navbarBackground} border-t border-gray-700 flex-col text-lg font-mono transition-all duration-300 ease-in-out overflow-hidden ${
           isOpen ? "flex opacity-100 scale-100" : "opacity-0 scale-95 pointer-events-none"
         }`}
       >
