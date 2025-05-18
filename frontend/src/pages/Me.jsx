@@ -1,3 +1,10 @@
+
+/**
+ * @file Me.jsx
+ * @author Brendan Dileo, May 2025
+ * Unfinished page.
+ */
+
 import Header from '../components/Header';
 import Sidebar from '../components/Sidebar';
 import ThreeCanvas from '../components/ThreeCanvas';

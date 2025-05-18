@@ -1,3 +1,4 @@
+
 /**
  * @file Contact.jsx
  * @author Brendan Dileo
@@ -53,6 +54,11 @@ const Contact = () => {
                 <Header 
                     title="Contact Me" 
                     subtitle="Let's get in touch!"
+                    typedTexts={[
+                        "I would love to hear from you!", 
+                        "Feel free to reach out with any questions or comments.",
+                        "Your feedback is important to me."
+                    ]}
                 />
             </div>
             <motion.div

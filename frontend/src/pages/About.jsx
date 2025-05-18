@@ -1,3 +1,4 @@
+
 /**
  * @file About.jsx
  * @author Brendan Dileo
@@ -61,6 +62,7 @@ const About = () => {
               <ul className="list-disc list-inside text-gray-300 space-y-2">
                 <li><span className="font-bold">GPA:</span> 93.5</li>
                 <li><span className="font-bold">99%</span> in Programming in Java</li>
+                <li><span className="font-bold">99%</span> in Mobile Web Programming</li>
                 <li><span className="font-bold">100%</span> in Systems Analysis & Design</li>
                 <li><span className="font-bold">96%</span> in Programming in C#.NET</li>
               </ul>
@@ -85,15 +87,17 @@ const About = () => {
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
       >
-
+      
+      {/* Skills */}
       <h2 className="text-4xl sm:text-3xl font-bold text-center mb-6">Skills</h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8">
         <div className="text-center p-4 md:p-6 border border-[#00ffcc] rounded-lg shadow-lg bg-gray-800 transition-transform transform hover:scale-105">
+          
+          {/* Programming Languages */}
           <h3 className="text-xl md:text-2xl font-semibold text-[#00ffcc] mb-4">Programming Languages</h3>
           <div className="flex justify-center flex-wrap gap-4 md:gap-6">
             <i className="devicon-java-plain text-4xl md:text-5xl hover:text-[#ff9900] transition-colors" />
             <i className="devicon-python-plain text-4xl md:text-5xl hover:text-[#306998] transition-colors" />
-            <i className="devicon-javascript-plain text-4xl md:text-5xl hover:text-[#f7df1e] transition-colors" />
             <i className="devicon-csharp-plain text-4xl md:text-5xl hover:text-[#9b4f96] transition-colors" />
             <i className="devicon-dot-net-plain text-4xl md:text-5xl hover:text-[#512bd4] transition-colors" />
             <i className="devicon-php-plain text-4xl md:text-5xl hover:text-[#777bb3] transition-colors" />
@@ -102,18 +106,22 @@ const About = () => {
         </div>
 
         <div className="text-center p-4 md:p-6 border border-[#00ffcc] rounded-lg shadow-lg bg-gray-800 transition-transform transform hover:scale-105">
+          {/* Web Development */}
           <h3 className="text-xl md:text-2xl font-semibold text-[#00ffcc] mb-4">Web Development & Frameworks</h3>
           <div className="flex justify-center flex-wrap gap-4 md:gap-6">
+            <i className="devicon-javascript-plain text-4xl md:text-5xl hover:text-[#f7df1e] transition-colors" />
+            <i className="devicon-typescript-plain text-4xl md:text-5xl hover:text-[#007acc] transition-colors" />
             <i className="devicon-react-original text-4xl md:text-5xl hover:text-[#61dafb] transition-colors" />
             <i className="devicon-nodejs-plain-wordmark text-4xl md:text-5xl hover:text-[#68a063] transition-colors" />
-            <i className="devicon-bootstrap-plain text-4xl md:text-5xl hover:text-[#563d7c] transition-colors" />
             <i className="devicon-tailwindcss-original text-4xl md:text-5xl hover:text-[#38b2ac] transition-colors" />
+            <i className="devicon-bootstrap-plain text-4xl md:text-5xl hover:text-[#563d7c] transition-colors" />
             <i className="devicon-html5-plain text-4xl md:text-5xl hover:text-[#e34c26] transition-colors" />
             <i className="devicon-css3-plain text-4xl md:text-5xl hover:text-[#1572b6] transition-colors" />
           </div>
         </div>
 
         <div className="text-center p-4 md:p-6 border border-[#00ffcc] rounded-lg shadow-lg bg-gray-800 transition-transform transform hover:scale-105">
+          
           <h3 className="text-xl md:text-2xl font-semibold text-[#00ffcc] mb-4">Databases, Scripting & Game Dev</h3>
           <div className="flex justify-center flex-wrap gap-4 md:gap-6">
             <i className="devicon-microsoftsqlserver-plain text-4xl md:text-5xl hover:text-[#cc2927] transition-colors" />
