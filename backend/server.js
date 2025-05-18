@@ -1,6 +1,9 @@
 
-// server.js
-// Brendan Dileo, May 2025
+/**
+ * @file server.js
+ * @author Brendan Dileo, May 2025
+ * Sets up a Node.js backend server using Express to handle form submissions from the frontend.
+ */
 
 const express = require('express');
 const cors = require('cors');
@@ -24,6 +27,7 @@ try {
     console.error('Failed to connect to the database:', err.message);
 }
 
+// Create the submissions table if it doesn't exist
 db.exec(`
     CREATE TABLE IF NOT EXISTS submissions (
       id INTEGER PRIMARY KEY AUTOINCREMENT,

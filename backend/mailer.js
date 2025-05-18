@@ -1,6 +1,9 @@
 
-// mailer.js
-// Brendan Dileo, May 2025
+/**
+ * @file mailer.js
+ * @author Brendan Dileo
+ * Sets up email sending functionality using NodeMailer to automatically send emails upon submission of the contact form.
+ */
 
 const nodemailer = require('nodemailer');
 require('dotenv').config();

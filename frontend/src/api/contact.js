@@ -1,6 +1,9 @@
 
-// contact.js
-// Brendan Dileo, May 2025
+/**
+ * @file contact.js
+ * @author Brendan Dileo, May 2025
+ * Defines a function to submit the contact form to the backend server through a HTTP POST request.
+ */
 
 import axios from 'axios';
 
