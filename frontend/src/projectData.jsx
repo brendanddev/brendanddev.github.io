@@ -1,4 +1,3 @@
-
 /**
  * @file projectData.jsx
  * @author Brendan Dileo
@@ -6,59 +5,55 @@
  * Exports an array of data containing information about some of my projects
  */
 
-import { Database, Boxes } from "lucide-react";
-import { FaPaintBrush, FaRobot } from "react-icons/fa";
-import { PiTerminalWindowDuotone,  PiFilePyThin } from "react-icons/pi";
-import { MdOutlineGamepad } from "react-icons/md";
+import { Database } from "lucide-react";
+import { FaPaintBrush, FaRobot, FaGamepad, FaCode } from "react-icons/fa";
+import { PiTerminalWindowDuotone } from "react-icons/pi";
 
 export const projectData = [
-    {
-        title: "User Management System",
-        desc: "A mock user management system featuring authentication and role-based access control. Built with PHP, JavaScript, and MySQL.",
-        icons: ["devicon-php-plain", "devicon-javascript-plain"],
-        extraIcon: <Database size={28} />,
-        link: "https://github.com/brendanddev/Full-Stack-Mock-User-Management-System"
-    },
     {
         title: "Black Ops 3 Mod Menu",
         desc: "A mod menu for Call of Duty: Black Ops 3, built in GSC (Game Script Code). Allows various gameplay customizations.",
         icons: ["devicon-cplusplus-plain"],
         extraIcon: [
-            <PiTerminalWindowDuotone size={30} />,
-            <MdOutlineGamepad size={28} />
+            <PiTerminalWindowDuotone key="terminal" size={24} />,
+            <FaGamepad key="gamepad" size={24} />
         ],
-        
-        link: "https://github.com/brendanddev/Black-Ops-3-GSC-Mod-Menu"
+        link: "https://github.com/brendandddev/Black-Ops-3-GSC-Mod-Menu"
+    },
+    {
+        title: "Multimodal Chatbot",
+        desc: "A sophisticated multimodal chatbot system that can process and respond to both text and image inputs using advanced AI models.",
+        icons: ["devicon-python-plain", "devicon-tensorflow-plain"],
+        extraIcon: <FaRobot size={24} />,
+        link: "https://github.com/brendanddev/multimodal-chatbot"
+    },
+    {
+        title: "Gamelog - Video Game Collection App",
+        desc: "A full-stack application for managing a video game collection. Built with React Native, Node.js, Express, and SQLite.",
+        icons: ["devicon-react-plain", "devicon-nodejs-plain", "devicon-express-original"],
+        extraIcon: <Database size={24} />,
+        link: "https://github.com/brendanddev/gamelog"
     },
     {
         title: "Tadpole Mania",
         desc: "A 2D side-scrolling game built in Unity using C#. Features sprite animations, collision detection, and scrolling backgrounds.",
         icons: ["devicon-csharp-plain", "devicon-unity-plain", "devicon-godot-plain"],
+        extraIcon: <FaGamepad size={24} />,
         link: "https://github.com/brendanddev/Tadpole-Mania-Unity-Game"
+    },
+    {
+        title: "User Management System",
+        desc: "A mock user management system featuring authentication and role-based access control. Built with PHP, JavaScript, and MySQL.",
+        icons: ["devicon-php-plain", "devicon-javascript-plain"],
+        extraIcon: <Database size={24} />,
+        link: "https://github.com/brendanddev/Full-Stack-Mock-User-Management-System"
     },
     {
         title: "Black Ops 1 Camo Pack",
         desc: "A custom camo pack for Call of Duty: Black Ops 1, using Photoshop/GIMP and game asset conversion tools.",
         icons: ["devicon-photoshop-plain", "devicon-gimp-plain"],
-        extraIcon: <FaPaintBrush size={28}/>,
+        extraIcon: <FaPaintBrush size={24} />,
         link: "https://github.com/brendanddev/Black-Ops-1-Camo-Pack"
-    },
-    {
-        title: "FAQ Discord Chat Bot",
-        desc: "An intelligent FAQ Discord bot that responds to user queries using fuzzy matching and heuristic techniques.",
-        icons: ["devicon-python-plain"],
-        extraIcon: [
-            <PiFilePyThin size={28} />,
-            <FaRobot size={28} />
-        ],
-        link: "https://github.com/brendanddev/FAQ-Bot"
-    },
-    {
-        title: "Minecraft Sword Mod",
-        desc: "A custom Minecraft mod in Java using the Forge Modding API. Adds a unique sword with abilities, new weapon mechanics, and item registration.",
-        icons: ["devicon-java-plain", "devicon-json-plain"],
-        extraIcon: <Boxes size={28} />,
-        link: "_blank"
     }
 ];
 

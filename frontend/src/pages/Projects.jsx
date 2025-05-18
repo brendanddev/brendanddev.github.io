@@ -1,3 +1,4 @@
+
 /**
  * @file Projects.jsx
  * @author Brendan Dileo 
@@ -11,7 +12,7 @@ import Sidebar from "../components/Sidebar";
 import { projectData } from "../projectData";
 import { useTheme } from "../context/ThemeContext";
 import ThemeToggle from "../components/ThemeToggle";
-import { FaGithub, FaExternalLinkAlt, FaCode } from "react-icons/fa";
+import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 
 const Projects = () => {
     const { isDarkMode } = useTheme();
@@ -24,14 +25,12 @@ const Projects = () => {
             transition={{ duration: 1 }} 
             className={`w-full min-h-screen flex flex-col items-center relative ${isDarkMode ? 'bg-gray-900' : 'bg-gray-50'} transition-colors duration-300`}
         >
-            {/* Background Gradient */}
-            <div className="absolute inset-0 bg-gradient-to-br from-[#00ffcc]/5 via-transparent to-[#00ffcc]/5 pointer-events-none" />
-            
             <ThemeToggle />
             <motion.div 
                 initial={{ y: -20, opacity: 0 }} 
                 animate={{ y: 0, opacity: 1 }} 
                 transition={{ duration: 1 }}
+                className="w-full"
             >
                 <Header 
                     title="My Projects" 
@@ -45,7 +44,7 @@ const Projects = () => {
             </motion.div>
 
             <motion.div 
-                className="w-full max-w-7xl px-4 md:px-6 lg:px-8"
+                className="w-full max-w-7xl px-4 md:px-6 lg:px-8 py-8"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.3 }}
@@ -57,33 +56,30 @@ const Projects = () => {
                             initial={{ scale: 0.9, opacity: 0 }}
                             animate={{ scale: 1, opacity: 1 }}
                             transition={{ duration: 0.5, delay: index * 0.1 }}
-                            className={`group relative overflow-hidden rounded-xl ${isDarkMode ? 'bg-gray-800/80 backdrop-blur-sm' : 'bg-white/80 backdrop-blur-sm'} 
-                                      shadow-lg transition-all duration-300 hover:shadow-2xl hover:shadow-[#00ffcc]/20
-                                      border border-transparent hover:border-[#00ffcc]/20`}
+                            className={`group relative flex flex-col h-full overflow-hidden rounded-xl ${
+                                isDarkMode ? 'bg-gray-800 hover:bg-gray-750' : 'bg-white hover:bg-gray-50'
+                            } shadow-lg transition-all duration-300 hover:shadow-2xl border border-transparent hover:border-[#00ffcc]/20`}
                         >
                             {/* Project Header */}
                             <div className="p-6 border-b border-gray-700/50">
-                                <div className="flex items-center gap-3 mb-3">
-                                    <FaCode className="text-[#00ffcc] text-xl" />
-                                    <h3 className="text-xl font-bold bg-gradient-to-r from-[#00ffcc] to-[#00e6b8] bg-clip-text text-transparent">
-                                        {project.title}
-                                    </h3>
-                                </div>
-                                <p className="text-sm text-gray-400 leading-relaxed">{project.desc}</p>
+                                <h3 className="text-xl font-bold text-[#00ffcc] mb-3">{project.title}</h3>
+                                <p className={`text-sm ${isDarkMode ? 'text-gray-400' : 'text-gray-600'} line-clamp-3`}>
+                                    {project.desc}
+                                </p>
                             </div>
 
                             {/* Tech Stack */}
-                            <div className="p-6">
-                                <h4 className="text-sm font-semibold text-gray-400 mb-3 flex items-center gap-2">
-                                    <span className="w-2 h-2 bg-[#00ffcc] rounded-full"></span>
+                            <div className="p-6 flex-grow">
+                                <h4 className={`text-sm font-semibold ${isDarkMode ? 'text-gray-400' : 'text-gray-600'} mb-4`}>
                                     Tech Stack
                                 </h4>
-                                <div className="flex flex-wrap gap-4">
+                                <div className="flex flex-wrap gap-4 items-center">
                                     {project.icons.map((icon, i) => (
-                                        <motion.i 
+                                        <i 
                                             key={i}
-                                            className={`${icon} text-2xl transition-all duration-300 hover:scale-110 hover:text-[#00ffcc]`}
-                                            whileHover={{ rotate: 5 }}
+                                            className={`${icon} text-2xl transition-transform duration-300 hover:scale-110 ${
+                                                isDarkMode ? 'text-gray-400' : 'text-gray-600'
+                                            }`}
                                         />
                                     ))}
                                     {project.extraIcon}
@@ -91,40 +87,30 @@ const Projects = () => {
                             </div>
 
                             {/* Project Links */}
-                            <div className="p-6 pt-0 flex justify-between items-center">
-                                <motion.a 
-                                    href={project.link}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-[#00ffcc] to-[#00e6b8] text-black rounded-lg font-medium 
-                                             transition-all duration-300 hover:shadow-lg hover:shadow-[#00ffcc]/20 hover:scale-105"
-                                    whileHover={{ scale: 1.05 }}
-                                    whileTap={{ scale: 0.95 }}
-                                >
-                                    <FaGithub className="text-lg" />
-                                    View Project
-                                </motion.a>
-                                <motion.a 
-                                    href={project.link}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="text-gray-400 hover:text-[#00ffcc] transition-colors duration-300"
-                                    whileHover={{ rotate: 15 }}
-                                >
-                                    <FaExternalLinkAlt className="text-lg" />
-                                </motion.a>
+                            <div className="p-6 pt-0 mt-auto">
+                                <div className="flex justify-between items-center">
+                                    <a 
+                                        href={project.link}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="inline-flex items-center gap-2 px-4 py-2 bg-[#00ffcc] text-black rounded-lg font-medium transition-all duration-300 hover:bg-[#00e6b8] hover:shadow-lg hover:scale-105"
+                                    >
+                                        <FaGithub className="text-lg" />
+                                        View Project
+                                    </a>
+                                    <a 
+                                        href={project.link}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className={`${isDarkMode ? 'text-gray-400' : 'text-gray-600'} hover:text-[#00ffcc] transition-colors duration-300 hover:scale-110`}
+                                    >
+                                        <FaExternalLinkAlt className="text-lg" />
+                                    </a>
+                                </div>
                             </div>
 
-                            {/* Hover Effects */}
-                            <div className="absolute inset-0 bg-gradient-to-br from-[#00ffcc]/0 via-[#00ffcc]/0 to-[#00ffcc]/0 
-                                          group-hover:from-[#00ffcc]/5 group-hover:via-[#00ffcc]/10 group-hover:to-[#00ffcc]/5 
-                                          transition-all duration-500" />
-                            
-                            {/* Corner Accents */}
-                            <div className="absolute top-0 left-0 w-20 h-20 bg-gradient-to-br from-[#00ffcc]/10 to-transparent opacity-0 
-                                          group-hover:opacity-100 transition-opacity duration-500" />
-                            <div className="absolute bottom-0 right-0 w-20 h-20 bg-gradient-to-tl from-[#00ffcc]/10 to-transparent opacity-0 
-                                          group-hover:opacity-100 transition-opacity duration-500" />
+                            {/* Hover Overlay */}
+                            <div className="absolute inset-0 bg-[#00ffcc] opacity-0 group-hover:opacity-5 transition-opacity duration-300" />
                         </motion.div>
                     ))}
                 </div>
