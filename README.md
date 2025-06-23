@@ -1,8 +1,8 @@
 # Brendans Portfolio Website
+Welcome to my personal portfolio! This project showcases my work, skills, and projects using modern frontend technologies.
 
 
 This portfolio is built using the following technologies:
-
 - [Vite](https://vitejs.dev/)
 - [React](https://reactjs.org/)
 - [Tailwind CSS](https://tailwindcss.com/)
